@@ -42,3 +42,7 @@ md-content {
 .arya-loginform {
   background-color: rgba(255, 255, 255, 0.7);
   margin-top: 50px; }
+
+footer {
+  color: white;
+  margin-left: 10px; }

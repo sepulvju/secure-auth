@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JP Labs Login System</title>
+	<title>Login System</title>
 	<link rel="stylesheet" type="text/css" href="/css/angular-material.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script src="/js/main.min.js" type="text/javascript" charset="utf-8" async defer></script>
@@ -10,7 +10,10 @@
 <body ng-app="arya" ng-cloak layout="column">
 	<div layout="column" layout-fill>
 		<md-toolbar layout="row">
-			<h1 class="md-toolbar-tools" layout-align="center center">JPL Secure Login System</h1>
+			<h1 class="md-toolbar-tools" layout-align="left center">Secure Login System</h1>
+			<form layout-align="right center" layout="row">
+				<md-button class="md-raised md-primary" ng-controller="redirectController" class="md-raised md-primary" type="button" ng-click="gotoURL()">Register</md-button>
+			</form>
 		</md-toolbar>
     <md-content layout="column" class="content-wrapper md-padding" flex>
 			<div ng-controller="messageController">
@@ -28,6 +31,9 @@
 			</div>
       {{{body}}}
     </md-content>
+		<footer>
+			&copy; 2016 Powered by JPLabs Inc.
+		</footer>
   </div>
 
 		<!-- Angular Material requires Angular.js Libraries -->

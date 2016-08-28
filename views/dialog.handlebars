@@ -1,0 +1,14 @@
+<md-content layout="column" class="content-wrapper md-padding" flex>
+  <div flex layout="row" layout-align="center center" ng-controller="formController">
+    <form method="post" action="/api/oauth2/authorize" flex="45" class="arya-loginform" >
+      <h2 layout="row" layout-align="center center">Hi {{username}}</h2>
+      <h3 layout="row" layout-align="center center">{{client}} is requesting full access to your account.</h3>
+      <h2 layout="row" layout-align="center center">Do you approve?</h2>
+      <md-content class="md-no-momentum" layout="row">
+        <input name="transaction_id" type="hidden" value="{{transactionID}}">
+        <md-button class="md-raised md-primary" type="submit" id="allow" value="Allow" flex="50">Allow</md-button>
+        <md-button class="md-raised md-primary" type="submit" id="deny" value="Deny" name="cancel" flex="50">Deny</md-button>
+      </md-content>
+    </form>
+  </div>
+</md-content>
