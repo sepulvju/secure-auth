@@ -1,0 +1,25 @@
+<div flex layout="row" layout-align="center center" ng-controller="formController">
+  <form method="post" action="/users/login" flex="30" class="arya-loginform" >
+    <h2 layout="row" layout-align="center center">Account Login</h2>
+    <md-content class="md-no-momentum" layout="column">
+      <md-input-container class="md-icon-float md-block arya-marginloginform">
+        <label>Email</label>
+        <input ng-model="user.email" name="username" type="email" class="form-control" name="username" placeholder="Enter your mail (required)" ng-required="true">
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block arya-marginloginform">
+        <label>Password</label>
+        <input ng-model="user.password" type="password" name="password" placeholder="Enter your password (required)" ng-required="true">
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block arya-marginloginform">
+        <md-checkbox md-no-ink aria-label="Remember me" ng-model="user.remember" name="remember" ng-click="isRemember()"  class="md-primary arya-marginloginform">
+          Remember me
+          <input type="hidden" name="remember" ng-model="remember.is" ng-value="remember.is">
+        </md-checkbox>
+      </md-input-container>
+      <md-button class="md-raised md-primary" type="submit">Next</md-button>
+      {{#if error}}
+        <md-button ng-controller="redirectController" class="md-raised md-primary" type="button" ng-click="gotoURL()">Register</md-button>
+      {{/if}}
+    </md-content>
+  </form>
+</div>

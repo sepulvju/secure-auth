@@ -1,0 +1,64 @@
+$headerSize: 50px;
+$imagefullPath: '../imgs/';
+
+// background
+@mixin background($imgpath1, $imgpath2) {
+    background: {
+        image: url($imagefullPath + $imgpath1), -moz-linear-gradient(60deg, rgba(124, 236, 180, 0.5) 5%, rgba(108, 141, 255, 0.35)), url($imagefullPath + $imgpath2);
+				image: url($imagefullPath + $imgpath1), -webkit-linear-gradient(60deg, rgba(124, 236, 180, 0.5) 5%, rgba(108, 141, 255, 0.35)), url($imagefullPath + $imgpath2);
+				image: url($imagefullPath + $imgpath1), -ms-linear-gradient(60deg, rgba(124, 236, 180, 0.5) 5%, rgba(108, 141, 255, 0.35)), url($imagefullPath + $imgpath2);
+				image: url($imagefullPath + $imgpath1), linear-gradient(60deg, rgba(124, 236, 180, 0.5) 5%, rgba(108, 141, 255, 0.35)), url($imagefullPath + $imgpath2);
+				color: #ffffff;
+				attachment: fixed, fixed, fixed;
+				repeat: repeat, no-repeat, no-repeat;
+				size: 100px 100px, cover, cover;
+				position: top left, center center, bottom center;
+    }
+}
+
+body{
+	@include background('overlay.png', 'bg.jpg');
+}
+
+md-toolbar{
+    background-color: rgba(0,0,0,.3) !important;
+}
+
+md-toolbar h1 {
+  font-weight: normal;
+}
+
+md-content{
+	background-color: transparent;
+}
+
+.md-subheader{
+	text-align: center;
+  font-size: 1.5em;
+}
+
+.err{
+	background-color: rgba(255,0,0,.5);
+	color: white;
+}
+
+.err-register{
+	background-color: rgba(255,0,0,.5);
+	color: white;
+	font-size: 1em;
+}
+
+.succ{
+	background-color: rgba(4, 101, 7, 0.25);
+	color: white;
+}
+
+.arya-marginloginform{
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.arya-loginform{
+	background-color: rgba(255,255,255,.7);
+	margin-top: 50px;
+}

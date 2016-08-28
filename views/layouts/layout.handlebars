@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JP Labs Login System</title>
+	<link rel="stylesheet" type="text/css" href="/css/angular-material.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script src="/js/main.min.js" type="text/javascript" charset="utf-8" async defer></script>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body ng-app="arya" ng-cloak layout="column">
+	<div layout="column" layout-fill>
+		<md-toolbar layout="row">
+			<h1 class="md-toolbar-tools" layout-align="center center">JPL Secure Login System</h1>
+		</md-toolbar>
+    <md-content layout="column" class="content-wrapper md-padding" flex>
+			<div ng-controller="messageController">
+				{{#if success_msg}}
+					<md-subheader class="md-no-sticky succ" ng-show="message.hidden">{{success_msg}}</md-subheader>
+				{{/if}}
+
+				{{#if error_msg}}
+					<md-subheader class="md-no-sticky err" ng-show="message.hidden">{{error_msg}}</md-subheader>
+				{{/if}}
+
+				{{#if error}}
+					<md-subheader class="md-no-sticky err" ng-show="message.hidden">{{error}}</md-subheader>
+				{{/if}}
+			</div>
+      {{{body}}}
+    </md-content>
+  </div>
+
+		<!-- Angular Material requires Angular.js Libraries -->
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/angular-animate.min.js"></script>
+	<script src="/js/angular-aria.min.js"></script>
+	<script src="/js/angular-messages.min.js"></script>
+
+	<!-- Angular Material Library -->
+	<script src="/js/angular-material.min.js"></script>
+
+	<!-- Angular routes Library -->
+	<script src="/js/angular-ui-router.min.js"></script>
+
+	<script src="/js/arya-module.min.js"></script>
+</body>
+</html>

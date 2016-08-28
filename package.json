@@ -1,0 +1,46 @@
+{
+  "name": "secure-auth",
+  "version": "0.0.1",
+  "description": "Secure authentification for multiple systems includinf IoT",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "private": true,
+  "keywords": [
+    "auth",
+    "2fa",
+    "login",
+    "system",
+    "IoT"
+  ],
+  "author": "sepulvju <me@jplabs.xyz>",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-flatten": "^0.3.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}

@@ -1,0 +1,29 @@
+{{#if errors}}
+      {{#each errors}}
+        <md-subheader ng-controller="messageController" ng-show="err.hidden" class="md-no-sticky err-register">{{msg}}</md-subheader>
+      {{/each}}
+{{/if}}
+<div flex layout="row" layout-align="center center">
+  <form method="post" action="/users/register" flex="30" class="arya-loginform" >
+    <h2 layout="row" layout-align="center center">Register</h2>
+    <md-content class="md-no-momentum" layout="column">
+      <md-input-container class="md-icon-float md-block arya-marginloginform">
+        <label>Name</label>
+        <input ng-model="user.name" name="name" type="text" class="form-control" placeholder="Enter your name (required)" ng-required="true">
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block arya-marginloginform">
+        <label>Email</label>
+        <input ng-model="user.email" type="email" class="form-control" name="username" placeholder="Enter your mail (required)" ng-required="true">
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block arya-marginloginform">
+        <label>Password</label>
+        <input ng-model="user.password" type="password" name="password" placeholder="Enter your password (required)" ng-required="true">
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block arya-marginloginform">
+        <label>Confirm Password</label>
+        <input ng-model="user.password2" type="password" name="password2" placeholder="Enter your password (required)" ng-required="true">
+      </md-input-container>
+      <md-button class="md-raised md-primary" type="submit">Register</md-button>
+    </md-content>
+  </form>
+</div>
