@@ -11,9 +11,11 @@
 	<div layout="column" layout-fill>
 		<md-toolbar layout="row">
 			<h1 class="md-toolbar-tools" layout-align="left center">Secure Login System</h1>
-			<form layout-align="right center" layout="row">
-				<md-button class="md-raised md-primary" ng-controller="redirectController" class="md-raised md-primary" type="button" ng-click="gotoURL()">Register</md-button>
-			</form>
+			{{#if success_msg}}
+				<form layout-align="right center" layout="row">
+					<md-button class="md-raised md-primary" ng-controller="redirectController" class="md-raised md-primary" type="button" ng-click="gotoURL()">Register</md-button>
+				</form>
+			{{/if}}
 		</md-toolbar>
     <md-content layout="column" class="content-wrapper md-padding" flex>
 			<div ng-controller="messageController">

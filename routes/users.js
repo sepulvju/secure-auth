@@ -4,6 +4,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
+var userController = require('../controllers/user');
 
 // Register
 router.get('/register', function(req, res){
@@ -53,9 +54,8 @@ router.post('/register', function(req, res){
 			password: password
 		});
 
-		User.createUser(newUser, function(err, user){
+		userController.createUser(newUser, function(err, user){
 			if(err) throw err;
-			console.log(user);
 		});
 
 		req.flash('success_msg', 'You are registered and can now login');
@@ -66,13 +66,13 @@ router.post('/register', function(req, res){
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
-   User.getUserByUsername(username, function(err, user){
+   userController.getUserByUsername(username, function(err, user){
    	if(err) throw err;
    	if(!user){
    		return done(null, false, {message: 'Unknown User'});
    	}
 
-   	User.comparePassword(password, user.password, function(err, isMatch){
+   	userController.comparePassword(password, user.password, function(err, isMatch){
    		if(err) throw err;
    		if(isMatch){
    			return done(null, user);
@@ -88,7 +88,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-  User.getUserById(id, function(err, user) {
+  userController.getUserById(id, function(err, user) {
     done(err, user);
   });
 });
@@ -98,7 +98,6 @@ router.post('/login',  passport.authenticate('local',
 	failureFlash: true}),
   function(req, res) {
 		if (req.body.remember == "true") {
-			console.log(req.body);
       req.session.cookie.maxAge = 30 * 24 * 60 * 60 * 1000; // Cookie expires after 30 days
     } else {
       req.session.cookie.expires = false; // Cookie expires at end of session

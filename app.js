@@ -19,6 +19,8 @@ var db = mongoose.connection;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var clients = require('./routes/clients');
+var oauth2 = require('./routes/oauth2');
 
 // Init App
 var app = express();
@@ -88,10 +90,14 @@ app.use(function (req, res, next) {
   next();
 });
 
-
+// Create our Express router
+var router = express.Router();
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/api/clients', clients);
+app.use('/api/oauth2', oauth2);
+
 
 // Set Port
 app.set('port', (process.env.PORT || 3002));
