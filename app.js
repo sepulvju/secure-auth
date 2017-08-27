@@ -41,8 +41,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Express Session
 app.use(session({
-    secret: '0_v7^^JxCcUJLGNeYf6l',
-    name: 'SessionID',
+    secret: '*****',
+    name: '*****',
     resave: false,
     saveUninitialized: true,
     cookie: {
